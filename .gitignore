@@ -1,0 +1,52 @@
+# Ignore everything by default
+*
+
+# Re-include all directories so git can traverse into them
+!*/
+
+# Repo meta
+!.gitignore
+!.gitattributes
+!LICENSE
+!README.md
+!AGENTS.md
+!CLAUDE.md
+
+# Go source and module files
+!*.go
+!*.gotmpl
+!*.gohtml
+!go.mod
+!go.sum
+
+# Tooling config
+!.golangci.yml
+!.goreleaser.yaml
+!justfile
+
+# CI
+!.github/**/*.yml
+!.github/**/*.yaml
+
+# Test fixtures
+!testdata/**
+
+# Shared IDE files
+!.idea/misc.xml
+!.idea/modules.xml
+!.idea/vcs.xml
+!.idea/libraries/**
+!.idea/*.iml
+!.idea/go.imports.xml
+!.idea/inspectionProfiles/Project_Default.xml
+
+# Directories the allow rules above would otherwise leak into
+# (must stay last so they override the re-includes)
+/.jj/
+/.junie/
+/.agents/
+vendor/
+node_modules/
+artifacts/
+/dist/
+/bin/
